@@ -12,12 +12,8 @@ export default function Welcome() {
         <Text>Sell What You Don't Need</Text>
       </View>
       <View style={styles.con}>
-        <View
-          style={{ width: "100%", height: 80, backgroundColor: "#fc5c65" }}
-        />
-        <View
-          style={{ width: "100%", height: 80, backgroundColor: "#4ECDC4" }}
-        />
+        <View style={styles.loginBtn} />
+        <View style={styles.registerBtn} />
       </View>
     </ImageBackground>
   );
@@ -42,5 +38,15 @@ const styles = StyleSheet.create({
   con: {
     height: "auto",
     width: "100%",
+  },
+  loginBtn: {
+    width: "100%",
+    height: 70,
+    backgroundColor: "#fc5c65",
+  },
+  registerBtn: {
+    width: "100%",
+    height: 70,
+    backgroundColor: "#4ECDC4",
   },
 });
