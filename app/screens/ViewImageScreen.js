@@ -1,24 +1,27 @@
-import React, { Component } from "react";
-import { Text, View, StyleSheet, Image } from "react-native";
+import React from "react";
+import { View, StyleSheet, Image } from "react-native";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import colors from "../config/colors";
 
-export default class ViewImageScreen extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <View style={styles.iconsContainer}>
-          <View style={styles.closeIcon} />
-          <View style={styles.deleteIcon} />
-        </View>
-        <Image
-          source={require("../assets/chair.jpg")}
-          resizeMode="contain"
-          style={styles.bgImg}
+export default function ViewImageScreen() {
+  return (
+    <View style={styles.container}>
+      <View style={styles.iconsContainer}>
+        <MaterialCommunityIcons name="close" size={30} color={colors.white} />
+        <MaterialCommunityIcons
+          name="trash-can-outline"
+          size={30}
+          color={colors.white}
         />
       </View>
-    );
-  }
+      <Image
+        source={require("../assets/chair.jpg")}
+        resizeMode="contain"
+        style={styles.bgImg}
+      />
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
@@ -33,20 +36,11 @@ const styles = StyleSheet.create({
     backgroundColor: colors.black,
     paddingTop: 50,
   },
-  closeIcon: {
-    width: 50,
-    height: 50,
-    backgroundColor: colors.primary,
-  },
-  deleteIcon: {
-    width: 50,
-    height: 50,
-    backgroundColor: colors.secondary,
-  },
   iconsContainer: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+    paddingHorizontal: 30,
   },
 });
