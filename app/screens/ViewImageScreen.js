@@ -8,10 +8,10 @@ export default function ViewImageScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.iconsContainer}>
-        <MaterialCommunityIcons name="close" size={30} color={colors.white} />
+        <MaterialCommunityIcons name="close" size={35} color={colors.white} />
         <MaterialCommunityIcons
           name="trash-can-outline"
-          size={30}
+          size={35}
           color={colors.white}
         />
       </View>

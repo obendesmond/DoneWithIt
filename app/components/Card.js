@@ -1,17 +1,16 @@
 import { View, Image, Text, StyleSheet } from "react-native";
 import React from "react";
 
-import img from "../assets/jacket.jpg";
 import colors from "../config/colors";
 import AppText from "./AppText";
 
-export default function Card({ title, subTitle }) {
+export default function Card({ title, subTitle, img }) {
   return (
     <View style={styles.card}>
       <Image source={img} style={styles.img} />
       <View style={styles.titleContainer}>
         <AppText>{title}</AppText>
-        <Text style={styles.price}>{subTitle}</Text>
+        <AppText style={styles.price}>{subTitle}</AppText>
       </View>
     </View>
   );
@@ -22,8 +21,9 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
     width: "100%",
     height: "auto",
-    borderRadius: 20,
+    borderRadius: 15,
     overflow: "hidden",
+    marginBottom: 20,
   },
   img: {
     height: 200,
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   },
   price: {
     color: colors.secondary,
-    fontWeight: "bold",
+    fontWeight: "900",
     marginTop: 5,
   },
   titleContainer: {
