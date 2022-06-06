@@ -1,4 +1,4 @@
-import { FlatList, StyleSheet, View } from "react-native";
+import { FlatList, StyleSheet, Image } from "react-native";
 import React, { useState } from "react";
 
 import desmond from "../assets/desmond.jpeg";
@@ -43,9 +43,11 @@ export default function MessagesScreen() {
         keyExtractor={message => message.id.toString()}
         renderItem={({ item, index }) => (
           <ListItem
-            img={item.image}
-            title={item.title}
-            subTitle={item.description}
+            iconComponent={
+              <Image style={styles.img} source={item.image} alt="" />
+            }
+            title="My Listings"
+            subTitle="hello, desmond..."
             onPress={() => console.log("Message was selected", item)}
             renderRightActions={() => (
               <ListItemDeleteAction onPress={() => handleDelete(item)} />
@@ -69,4 +71,10 @@ export default function MessagesScreen() {
   );
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  img: {
+    borderRadius: 30,
+    width: 60,
+    height: 60,
+  },
+});
