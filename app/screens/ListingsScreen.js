@@ -1,4 +1,4 @@
-import { View, StyleSheet, FlatList } from "react-native";
+import { View, StyleSheet, FlatList, Platform } from "react-native";
 import Card from "../components/Card";
 import Screen from "../components/Screen";
 import colors from "../config/colors";
@@ -18,7 +18,7 @@ const listings = [
   },
   {
     id: 3,
-    title: "Jacket in Great Condition",
+    title: "Jacket in a very Great Condition",
     price: 120,
     image: require("../assets/jacket.jpg"),
   },
@@ -45,6 +45,6 @@ export default function ListingsScreen() {
 const styles = StyleSheet.create({
   screen: {
     backgroundColor: colors.light,
-    padding: 20,
+    padding: Platform.OS === "android" ? 10 : 20,
   },
 });

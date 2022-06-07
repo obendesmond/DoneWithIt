@@ -1,14 +1,13 @@
-import { View } from "react-native";
-import Card from "./app/components/Card";
-import ViewImageScreen from "./app/screens/ViewImageScreen";
-import WelcomeScreen from "./app/screens/WelcomeScreen";
-import jacket from "./app/assets/jacket.jpg";
-import couch from "./app/assets/couch.jpg";
-import ListingDetailsScreen from "./app/screens/ListingDetailsScreen";
-import MessagesScreen from "./app/screens/MessagesScreen";
-import AccountScreen from "./app/screens/AccountScreen";
-import ListingsScreen from "./app/screens/ListingsScreen";
+import { useState } from "react";
+import { TextInput, Text } from "react-native";
+import Screen from "./app/components/Screen";
+import AppTextInput from "./app/components/AppTextInput";
 
 export default function App() {
-  return <ListingsScreen />;
+  const [firstName, setFirstName] = useState("");
+  return (
+    <Screen>
+      <AppTextInput icon="email" placeholder="Username" />
+    </Screen>
+  );
 }
